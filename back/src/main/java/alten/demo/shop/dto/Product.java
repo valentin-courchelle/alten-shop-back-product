@@ -1,6 +1,5 @@
 package alten.demo.shop.dto;
 
-import jakarta.persistence.Enumerated;
 import lombok.*;
 
 @Getter
