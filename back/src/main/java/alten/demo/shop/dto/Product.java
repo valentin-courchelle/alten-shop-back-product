@@ -1,18 +1,16 @@
 package alten.demo.shop.dto;
 
 import jakarta.persistence.Enumerated;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Product {
 
-    private long id;
+    private Long id;
 
     private String code;
 
@@ -20,9 +18,9 @@ public class Product {
 
     private String description;
 
-    private int price;
+    private Integer price;
 
-    private int quantity;
+    private Integer quantity;
 
     private InventoryStatus inventoryStatus;
 
@@ -30,5 +28,5 @@ public class Product {
 
     private String image;
 
-    private int rating;
+    private Integer rating;
 }
