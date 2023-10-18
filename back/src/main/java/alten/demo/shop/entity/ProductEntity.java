@@ -29,6 +29,7 @@ public class ProductEntity {
     private int quantity;
 
     @Enumerated(value = EnumType.STRING)
+    @Column(name = "inventory_status")
     private InventoryStatus inventoryStatus;
 
     private String category;

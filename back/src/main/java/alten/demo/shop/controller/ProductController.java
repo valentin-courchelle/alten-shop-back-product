@@ -13,6 +13,10 @@ public class ProductController {
 
     private ProductControllerService controllerService;
 
+    public ProductController(ProductControllerService controllerService) {
+        this.controllerService = controllerService;
+    }
+
     @PostMapping
     ResponseEntity<Product> createProduct(@RequestBody Product product) {
         return new ResponseEntity<>(this.controllerService.createProduct(product), HttpStatus.OK);
@@ -24,26 +28,26 @@ public class ProductController {
     }
 
     @GetMapping("/{productId}")
-    ResponseEntity<Product> getProductById(@PathVariable long id) {
-        Product product = this.controllerService.getProductById(id);
+    ResponseEntity<Product> getProductById(@PathVariable long productId) {
+        Product product = this.controllerService.getProductById(productId);
         if (product == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(new Product(), HttpStatus.OK);
+        return new ResponseEntity<>(product, HttpStatus.OK);
     }
 
     @PatchMapping("/{productId}")
-    ResponseEntity<Product> updateProductById(@PathVariable long id, @RequestBody Product product) {
-        Product updatedProduct = this.controllerService.updateProductById(id, product);
+    ResponseEntity<Product> updateProductById(@PathVariable long productId, @RequestBody Product product) {
+        Product updatedProduct = this.controllerService.updateProductById(productId, product);
         if (updatedProduct == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<>(new Product(), HttpStatus.OK);
+        return new ResponseEntity<>(updatedProduct, HttpStatus.OK);
     }
 
     @DeleteMapping("/{productId}")
-    ResponseEntity<Void> deleteProductById(@PathVariable long id) {
-        if (this.controllerService.deleteProductById(id)) {
+    ResponseEntity<Void> deleteProductById(@PathVariable long productId) {
+        if (this.controllerService.deleteProductById(productId)) {
             return new ResponseEntity<>(HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
