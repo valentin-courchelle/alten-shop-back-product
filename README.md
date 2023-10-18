@@ -42,3 +42,10 @@ vous pouvez lancer le front-end angular avec la commande 'ng serve'
 # Bonus
 
 Vous pouvez ajouter des tests Postman ou Swagger pour valider votre API
+
+# Remarque
+
+Une base de donnée H2 a été utilisée pour cet exercice. Une fois le back lancé, une console de la base de données est disponible à l'adresse http://localhost:8080/h2-console/ avec comme paramètres d'accès:
+- JDBC URL: jdbc:h2:mem:testdb
+- User name: test
+- Password: test
