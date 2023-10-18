@@ -1,5 +1,5 @@
 CREATE TABLE products(
-   id BIGINT PRIMARY KEY,
+   id BIGINT PRIMARY KEY auto_increment,
    code VARCHAR(255) NOT NULL,
    name VARCHAR(255) NOT NULL,
    description TEXT NOT NULL,

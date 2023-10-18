@@ -1,5 +1,6 @@
 package alten.demo.shop.dto;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Getter
@@ -9,23 +10,30 @@ import lombok.*;
 @Builder
 public class Product {
 
-    private Long id;
+    private long id;
 
+    @NotNull
     private String code;
 
+    @NotNull
     private String name;
 
+    @NotNull
     private String description;
 
-    private Integer price;
+    private int price;
 
-    private Integer quantity;
+    private int quantity;
 
+    @NotNull
     private InventoryStatus inventoryStatus;
 
+    @NotNull
     private String category;
 
+    @NotNull
     private String image;
 
+    @NotNull
     private Integer rating;
 }
